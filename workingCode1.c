@@ -64,6 +64,9 @@ bool checkBoardForWin()
 */
 bool isSpaceEmpty(int positionX, int positionY)
 {
+	char buffer[10];
+	sprintf(buffer,"%d %d",positionX,positionY);
+	displayString(7, buffer);
 	if(board[positionX][positionY] == empty)
 	{
 		return true;
@@ -132,41 +135,22 @@ void displayBoard()
 
 task main()
 {
-	//displayBoard();
-
-	/*	do
-	{*/
 	int* myMove = chooseMove();
 	char buffer[sizeof(int)*2 + sizeof(char)];
 	sprintf(buffer,"%d %d",*myMove,*(myMove+1));
-	displayString(10,buffer);
 
-	if(numMoves%2)
+	if(numMoves%2 == 0)
 	{
-		addPiece(O,myMove[0],myMove[1]); //Player 2 places O
+		addPiece(X,0,0); //Player 2 places O
 	}
 	else
 	{
-		addPiece(X,0,0); //Player 1 places X
+		addPiece(O,0,1); //Player 1 places X
 	}
 	checkBoardForWin();
+
 	while(true)
 	{
 		displayBoard();
 	}
-	/*	}
-	while(!oWin && !xWin && numMoves < 8);
-
-	if(oWin == true)
-	{
-	//printf("Player two wins!");
-	}
-	else if(xWin == true)
-	{
-	//printf("Player one wins!");
-	}
-	else
-	{
-	//printf("It's a draw!");
-	}*/
 }

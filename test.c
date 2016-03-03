@@ -128,11 +128,8 @@ void displayBoard()
   		char buffer2[16];
   		char buffer3[16];
   		snprintf(buffer1,16,"%d %d %d",board[i][0],board[i][1],board[i][0]);
-  		//snprintf(buffer2,16,"%d",board[i][1]);
-  		//snprintf(buffer3,16,"%d",board[i][2]);
+
   		displayString(i*3,buffer1);
-  		//displayString(i*3,buffer2);
-  		//displayString(i*3,buffer3);
   }
 }
 
