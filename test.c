@@ -60,7 +60,7 @@ bool checkBoardForWin()
 */
 bool isSpaceEmpty(int positionX, int positionY)
 {
-	if(board[positionX][positionY] == 0)
+	if(board[positionX][positionY] == empty)
 	{
 		return true;
 	}
